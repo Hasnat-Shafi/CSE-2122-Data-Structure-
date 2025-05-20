@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void integerBubble(){
+    cout<<"Enter size of array\n";
+    int n;
+    cin>>n;
+
+    int a[n];
+
+    for(int i = 0; i < n; i++){
+        cin>>a[i];
+    }
+    //Bubble sort
+    int temp;
+    for(int i = 0; i < n-1; i++){
+        for(int j = 0; j < n-i-1; j++){
+            if(a[j] > a[j+1]){
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
+    }
+
+    for(int i = 0; i < n; i++){
+        cout<<a[i]<<" ";
+    }
+}
+void stringBubble(){
+    cout<< "Enter size of string array\n";
+    int n;
+    cin>>n;
+
+    string arr[n];
+    for(int i = 0; i < n; i++){
+        cin>>arr[i];
+    }
+    
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                    string temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+}
+int main(){
+
+    cout<<"Press 1 for integer sort or Press 2 for String sort\n";
+
+    int com;
+    cin>>com;
+    
+    if(com == 1){
+        cout<<"integer sort\n";
+        integerBubble();
+    }
+    
+    cout<<endl;
+    if(com == 2){
+        cout<<"String sort\n";
+        stringBubble();      
+    }
+  
+    
+
+    return 0;
+}
